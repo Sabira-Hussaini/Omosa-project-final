@@ -667,6 +667,7 @@ button {
 
 .crozel {
   display: flex;
+    flex-wrap: nowrap;
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
@@ -810,6 +811,7 @@ footer {
 
 .footer-bottom {
   display: flex;
+    flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 100px;
