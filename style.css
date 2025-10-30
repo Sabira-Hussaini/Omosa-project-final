@@ -314,6 +314,7 @@ html, body {
   background-color: rgb(189, 189, 188);
   color: white;
   padding: 10px;
+  
   font-weight: 500;
 }
 
@@ -378,7 +379,11 @@ color: white;}
   border: 3px solid rgb(148, 147, 147);
   padding: 10px 0 10px 10px;
   width: 480px;
-  height: 300px;
+  height: 260px;
+   transition: 0.3s ease;
+  overflow: hidden;
+  position: relative;
+
 }
 
 .num {
@@ -386,10 +391,38 @@ color: white;}
   margin-bottom: 50px;
 }
 
+.kard .title{
+  margin-bottom: 0;
+  margin-top: 170px;
+}
+
+.kard:hover .title{
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
 .none {
   display: none;
   padding-bottom: 0;
   margin-bottom: 0;
+   max-height: 0;
+
+ 
+  transition: 0.3s ease;
+
+
+}
+
+
+.kard:hover {
+ 
+  max-height: 340px;
+  width: auto;
+}
+
+/* نمایش متن */
+.kard:hover .none {
+ display: block;
 }
 
 /* 📱 RESPONSIVE ONLY – no design changes */
@@ -507,6 +540,7 @@ color: white;}
   height: 356px;
   border: 2px solid rgb(110, 110, 110);
   gap: 10px;
+ 
 }
 
 .services {
@@ -519,6 +553,9 @@ color: white;}
   margin-top: 100px;
 }
 
+.cards .h2, .cards p{
+  margin-left: 10px;
+}
 .grid {
   display: grid;
   gap: 20px;
