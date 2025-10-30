@@ -416,7 +416,7 @@ color: white;}
 
 .kard:hover {
  
-  max-height: 340px;
+  max-height: 360px;
   width: auto;
 }
 
@@ -707,13 +707,15 @@ button {
     flex-wrap: nowrap;
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
+
 }
 
 .carde {
-  width: 480px;
-  height: auto;
-  background: #fff;
+  
+  max-width: 480px;
+  width: 100%;
+  background: #fff;
+
 }
 
 .glass {
@@ -944,10 +946,20 @@ footer {
     align-items: center;
   }
 
-  .footer-bottom {
+  /* .footer-bottom {
     flex-direction: column;
     gap: 20px;
-  }
+  } */
+
+  .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 40px;
+  flex-wrap: wrap;   /* این مهم است */
+  gap: 20px;         /* 300px را حذف کردیم */
+}
 
   .footer-bottom h1 {
     font-size: 50px;
