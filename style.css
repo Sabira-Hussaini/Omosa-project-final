@@ -850,40 +850,39 @@ footer {
 
 .footer-bottom {
   display: flex;
-    flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 100px;
-  margin-bottom: 0;
-  padding: 0;
-  gap: 300px;
+  padding: 0 40px;
+  flex-wrap: wrap; /* ✅ اجازه می‌دهد اگر جا کم بود، خطوط نشکند */
+  gap: 40px; /* ✅ فاصله منطقی برای همه لپ‌تاپ‌ها */
 }
 
 .footer-bottom h1 {
-  font-size: 135px;
+  font-size: 150px; /* ✅ کمی کمتر تا در لپ‌تاپ نشکند */
   letter-spacing: 5px;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
+  white-space: nowrap; /* ✅ جلوگیری از شکستن لوگو */
 }
 
 .ovals {
   display: inline-block;
-  width: 80px;
-  height: 60px;
-  border: 16px solid white;
+  width: 98px;
+  height: 85px;
+  border: 18px solid white;
   border-radius: 40%;
   margin: 0 8px;
   vertical-align: middle;
+  margin-bottom: 5px;
 }
 
 .footer-links {
   display: flex;
-  gap: 350px;
+  gap: 60px; /* ✅ از 350px به مقدار ریسپانسیو تغییر کرد */
   font-size: 12px;
   color: #999;
-  margin-bottom: 0;
+  margin: 0;
 }
-
 /* ✅ Responsive Design - only additions below, no layout changed */
 
 /* Tablet */
@@ -957,14 +956,11 @@ footer {
   align-items: center;
   margin-top: 100px;
   padding: 0 40px;
-  flex-wrap: nowrap;   /* این مهم است */
- box-sizing: border-box;         /* 300px را حذف کردیم */
+  flex-wrap: wrap;   /* این مهم است */
+  gap: 20px;         /* 300px را حذف کردیم */
 }
 
   .footer-bottom h1 {
-    margin: 0;
-    line-height: 1;
-    display: flex;
     font-size: 50px;
     text-align: center;
   }
@@ -976,14 +972,10 @@ footer {
   }
 
   .footer-links {
-    display: flex;
-   margin-left: auto;
-    gap: 25px;
+    flex-direction: column;
+    gap: 10px;
     text-align: center;
   }
 }
-
-
-
 
 
