@@ -1,0 +1,804 @@
+/* 🌸 General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: white; /* clean white page background */
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* 🌟 Hero Section */
+.hero-section {
+  position: relative;
+  color: black; /* visible on white background */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: white; /* ✅ white background */
+  padding-top: 120px; /* keeps text below fixed header */
+  box-sizing: border-box;
+}
+
+/* 🔹 Header */
+.main-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  z-index: 10;
+  perspective: 800px;
+ 
+  
+}
+
+/* 🌸 Glass Navigation */
+.glass-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(240, 240, 240, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+.nav-home {
+  background: black;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-home:hover {
+  background: #ff7db5;
+  color: black;
+}
+
+.nav-dot {
+  font-size: 30px;
+  color: gray;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  gap: 15px;
+}
+
+.glass-nav:hover .nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff7db5;
+}
+
+
+
+/* کانتینر برای حلقه */
+.header-oval-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 150px; /* فضا برای حرکت حلقه */
+  transform: translateX(-50%);
+  pointer-events: none; /* تا روی منو کلیک را مسدود نکند */
+}
+
+/* خود حلقه با همان استایل‌های تو + دیده شدن */
+.rotating-oval {
+  width: 27px;
+  height: 21px;
+  border: 5px solid black;
+  border-radius: 40%;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  /* animation: moveGrowRotate 1.8s ease-out forwards; */
+  animation: moveGrowSpin 2.5s ease-out forwards;
+
+ z-index: 1; 
+ transform-style: preserve-3d;
+ transform-origin: center center;
+ will-change: transform;
+
+}
+
+/* @keyframes moveGrowRotate {
+  0% {
+    transform: translateX(-50%) translateY(0px) scale(1) rotate(0deg);
+  }
+  30% {
+    transform: translateX(-50%) translateY(100px) scale(2.2) rotateY(180deg);
+  }
+  60% {
+    transform: translateX(-50%) translateY(140px) scale(3.25) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(300px) scale(8.4) rotateY(180deg);
+  }
+} */
+
+/* .rotate-oval.spin {
+  animation: spinY 2.5s linear infinite;
+}
+
+@keyframes spinY {
+  from { transform: translateX(-50%) rotateY(0deg); }
+  to   { transform: translateX(-50%) rotateY(360deg); }
+} */
+
+/* 🌀 smooth grow + horizontal spin on load */
+@keyframes moveGrowSpin {
+  0% {
+    transform: translateX(-50%) translateY(0px) scale(1) rotateY(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(300px) scale(8.4) rotateY(360deg);
+  }
+}
+
+/* 🔁 keep spinning while scrolling */
+.spin-scroll {
+  animation: spinY 2s linear infinite;
+}
+
+@keyframes spinY {
+  from { transform: translateX(-50%) rotateY(0deg); }
+  to { transform: translateX(-50%) rotateY(360deg); }
+}
+
+/* 🚫 hide when reaches section three */
+.hide-oval {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+}
+
+
+  
+  
+
+
+
+/* 📞 Contact Button */
+.btn-contact {
+  text-decoration: none;
+  background: black;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-contact::after {
+  content: '✉️';
+  position: absolute;
+  right: -25px;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+
+.btn-contact:hover::after {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.btn-contact:hover {
+  background: #ff7db5;
+  color: black;
+}
+
+/* 🖋 Hero Text */
+.hero-text {
+  font-size: 46px;
+  line-height: 1.5;
+  padding: 40px;
+  text-align: left;
+  color: black;
+  position: relative;
+  margin-top: 340px;
+  z-index: 1;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .main-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .hero-text {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-home {
+    font-size: 14px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-contact {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .hero-text {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 18px;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .glass-nav,
+  .btn-contact {
+    padding: 8px 12px;
+  }
+
+  .rotating-oval {
+    width: 20px;
+    height: 15px;
+  }
+}
+
+
+.flex{
+  display: flex;
+  margin-top: 20px;
+justify-content: space-between;
+text-align: left;
+align-items: center;
+}
+
+
+
+      .ellipse-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 0;
+      background: #fff;
+      position: relative;
+    }
+
+    /* --- The ellipse container --- */
+    .ellipse-container {
+      position: relative;
+      width: 900px;
+      height: 450px;
+  
+    }
+
+ 
+
+    /* --- Text labels around the oval --- */
+    .ellipse-button {
+      position: absolute;
+      padding: 6px 16px;
+      background: #f0f0f0;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      
+    }
+
+    .ellipse-button.active {
+      background: #000;
+      color: #fff;
+    }
+
+    /* --- Moving bead --- */
+    .bead {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #000;
+      border-radius: 50%;
+      z-index: 10;
+    }
+    .ellipse-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1050px;
+  height: 210px;
+  transform: translate(-50%, -50%) rotate(-10deg); /* crucial */
+  border: 2px dashed #999;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+
+.cards {
+  width: 480px;
+  height: 356px;
+  border: 2px solid rgb(110, 110, 110);
+  gap: 10px;
+ 
+}
+
+.services {
+  width: 480px;
+  height: 400px;
+}
+
+.article {
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.cards .h2, .cards p{
+  margin-left: 10px;
+}
+.grid {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px; /* 👈 adds space between the first and second row */
+}
+
+/* ✅ Responsive Design - only additions below, no changes above */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .cards, .services {
+    width: 100%;
+    height: auto;
+  }
+
+  .article {
+    margin-top: 60px;
+    padding: 15px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards, .services {
+    width: 100%;
+    height: auto;
+  }
+
+  .h2 {
+    font-size: 20px;
+  }
+
+  .below {
+    font-size: 16px;
+  }
+
+  .foot {
+    font-size: 14px;
+  }
+}
+
+
+
+.foot {
+  background-color: rgb(189, 189, 188);
+  color: white;
+  padding: 10px;
+  
+  font-weight: 500;
+}
+
+
+.client-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+
+footer{
+  background-color: #000;
+  color: #fff;
+}
+.above{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.mediam{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+.low{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.footer-flex {
+  display: flex;
+ 
+  align-items: flex-start;
+  gap: 200px;
+  padding-top: 200px;
+}
+
+.grid2 {
+  margin-left: 100px;
+  margin-right: 0;
+}
+
+.scroll {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+  gap: 300px;
+  width: 550px;
+}
+
+.scrolls {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+
+
+
+
+.get-in {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #ccc;
+  letter-spacing: 2px;
+}
+
+.footer-bottom {
+  display: flex;
+  
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 40px;
+  flex-wrap: wrap; /* ✅ اجازه می‌دهد اگر جا کم بود، خطوط نشکند */
+  gap: 200px; /* ✅ فاصله منطقی برای همه لپ‌تاپ‌ها */
+}
+
+.footer-bottom h1 {
+  font-size: 150px; /* ✅ کمی کمتر تا در لپ‌تاپ نشکند */
+  letter-spacing: 5px;
+  margin: 0;
+  white-space: nowrap; /* ✅ جلوگیری از شکستن لوگو */
+}
+
+.ovals {
+  display: inline-block;
+  width: 98px;
+  height: 85px;
+  border: 18px solid white;
+  border-radius: 40%;
+  margin: 0 8px;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 200px; /* ✅ از 350px به مقدار ریسپانسیو تغییر کرد */
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
+/* ✅ Responsive Design - only additions below, no layout changed */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  footer {
+    width: 100%;
+    padding: 60px;
+  }
+
+  .footer-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .scroll {
+    width: 100%;
+    gap: 100px;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .footer-bottom h1 {
+    font-size: 80px;
+  }
+
+  .footer-links {
+    gap: 100px;
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 20px;
+  }
+
+  .footer-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .scroll {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .scrolls {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  /* .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+  } */
+
+  .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 40px;
+  flex-wrap: wrap;   /* این مهم است */
+  gap: 20px;         /* 300px را حذف کردیم */
+}
+
+  .footer-bottom h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .ovals {
+    width: 50px;
+    height: 35px;
+    border: 10px solid white;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+
+
+/* 🔄 continuous spin when scrolling */
+.spin-scroll {
+  animation: spinY 2s linear infinite;
+}
+
+@keyframes spinY {
+  from { transform: translateX(-50%) rotateY(0deg); }
+  to { transform: translateX(-50%) rotateY(360deg); }
+}
+
+/* 🎯 goes behind text or image */
+.behind {
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* 🚫 hides when reaches section three */
+.hide-oval {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+}
+
+
+/* -------------------- Responsive Design -------------------- */
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .faq-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .faq-left, .faq-right {
+    width: 100%;
+  }
+
+  .footer-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .brand-slider img {
+    width: 120px;
+  }
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  nav.glass-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-contact {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  .contact-form h1 {
+    font-size: 24px;
+  }
+
+  .contact-form h2 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .footer-flex {
+    gap: 30px;
+  }
+
+  footer h1 {
+    font-size: 24px;
+  }
+
+  .brand-slider img {
+    width: 90px;
+  }
+}
+
+/* Small Phones (up to 480px) */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px 15px;
+  }
+
+  .contact-form h1 {
+    font-size: 20px;
+  }
+
+  .contact-form h2 {
+    font-size: 14px;
+  }
+
+  input, select {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .faq-section {
+    padding: 20px;
+  }
+
+  .footer-flex {
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .brand-slider img {
+    width: 70px;
+  }
+}

@@ -1,0 +1,748 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0c0c0c;
+  color: #fff;
+}
+
+.contact-section {
+  padding: 60px 10%;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: space-between;
+}
+
+.contact-info {
+  flex: 1 1 250px;
+}
+
+.contact-block {
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.book-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.email {
+  font-weight: bold;
+  color: #fff;
+}
+
+.contact-info a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #999;
+}
+
+.contact-form {
+  flex: 2 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+input, select {
+  flex: 1;
+  padding: 14px;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #888282;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+select {
+  color:  #777;
+}
+
+.submit-btn {
+  background-color: #fff;
+  color: #000;
+  padding: 14px 24px;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: all 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #eaeaea;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+
+/* Brand Slider */
+
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff;
+  color: #000;
+  padding: 60px 10%;
+  gap: 40px;
+}
+
+.faq-left {
+  flex: 1 1 300px;
+}
+
+.faq-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.faq-left p {
+  margin: 10px 0 20px;
+  color: #555;
+}
+
+.contact-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.contact-btn:hover {
+  background: #333;
+}
+
+.faq-right {
+  flex: 1 1 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.faq-question {
+  background: #fff;
+  padding: 18px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  background: #fafafa;
+  transition: all 0.4s ease;
+  color: #444;
+}
+
+.faq-item.active .faq-answer {
+  padding: 15px 20px;
+  max-height: 200px;
+}
+
+.faq-item.active .faq-question::after {
+  content: "−";
+}
+
+.faq-question::after {
+  content: "+";
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    flex-direction: column;
+  }
+}
+
+.brand-slider {
+  background: #fff;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.slider-track {
+  display: flex;
+  width: calc(250px * 14);
+  animation: scroll 40s linear infinite;
+}
+
+.slider-track img {
+  width: 150px;
+  margin: 0 40px;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.slider-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+/* 🔹 Header */
+.main-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 10;
+
+}
+
+/* 🌸 Glass Navigation */
+.glass-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 6px 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.nav-home {
+  background: white;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-home:hover {
+  background: black;
+  color: white;
+}
+
+.nav-dot {
+  font-size: 30px;
+  color: gray;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  gap: 15px;
+}
+
+.glass-nav:hover .nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff7db5;
+}
+
+/* 🌙 Rotating Oval */
+.rotating-oval {
+  width: 27px;
+  height: 21px;
+  border: 5px solid white;
+  border-radius: 40%;
+  /* animation: spin 6s linear infinite;
+  margin: 0 auto; */
+}
+
+/* @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} */
+
+/* 📞 Contact Button */
+.btn-contact {
+  text-decoration: none;
+  background: white;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-contact::after {
+  content: '✉️';
+  position: absolute;
+  right: -25px;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.2s ease-in;
+}
+
+/* .btn-contact:hover {
+  color: #ff89b2;
+  letter-spacing: 1px;
+} */
+
+.btn-contact:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+.btn-contact {
+  text-decoration: none;
+  background: white;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  transition: none !important; /* مهم */
+}
+
+/* آیکون را ثابت و بدون انیمیشن کنیم */
+.btn-contact::after {
+  content: '✉';
+  position: absolute;
+  right: -25px;
+  opacity: 1; /* همیشه دیده شود */
+  transform: translateY(0); /* بدون حرکت */
+  transition: none !important; /* مهم */
+}
+
+/* هاور: هیچ تغییری نکند */
+.btn-contact:hover {
+  background: white !important;
+  color: black !important;
+}
+.btn-contact:hover::after {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* footer */
+footer {
+  margin-top: 100px;
+  background-color: black;
+  color: white;
+  width: 90%;
+  padding-top: 200px;
+  padding: 80px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-family: Arial, sans-serif;
+ 
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding-top: 200px;
+}
+
+.grid2 {
+  margin-left: 100px;
+  margin-right: 0;
+}
+
+.scroll {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+  gap: 300px;
+  width: 550px;
+}
+
+.scrolls {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+
+
+
+
+.get-in {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #ccc;
+  letter-spacing: 2px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 40px;
+  flex-wrap: wrap; /* ✅ اجازه می‌دهد اگر جا کم بود، خطوط نشکند */
+  gap: 40px; /* ✅ فاصله منطقی برای همه لپ‌تاپ‌ها */
+}
+
+.footer-bottom h1 {
+  font-size: 150px; /* ✅ کمی کمتر تا در لپ‌تاپ نشکند */
+  letter-spacing: 5px;
+  margin: 0;
+  white-space: nowrap; /* ✅ جلوگیری از شکستن لوگو */
+}
+
+.ovals {
+  display: inline-block;
+  width: 98px;
+  height: 85px;
+  border: 18px solid white;
+  border-radius: 40%;
+  margin: 0 8px;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px; /* ✅ از 350px به مقدار ریسپانسیو تغییر کرد */
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
+/* ✅ Responsive Design - only additions below, no layout changed */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  footer {
+    width: 100%;
+    padding: 60px;
+  }
+
+  .footer-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .scroll {
+    width: 100%;
+    gap: 100px;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .footer-bottom h1 {
+    font-size: 80px;
+  }
+
+  .footer-links {
+    gap: 100px;
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 20px;
+  }
+
+  .footer-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .scroll {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .scrolls {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  /* .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+  } */
+
+  .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 40px;
+  flex-wrap: wrap;   /* این مهم است */
+  gap: 20px;         /* 300px را حذف کردیم */
+}
+
+  .footer-bottom h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .ovals {
+    width: 50px;
+    height: 35px;
+    border: 10px solid white;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* ✅ Existing styles remain unchanged — only responsive tweaks added */
+
+/* 📱 Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .faq-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 5%;
+  }
+
+  .faq-left h2 {
+    font-size: 22px;
+  }
+
+  .faq-right {
+    width: 100%;
+  }
+
+  .brand-slider {
+    padding: 30px 0;
+  }
+
+  .slider-track img {
+    width: 100px;
+    margin: 0 20px;
+  }
+
+  footer {
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .footer-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .scroll {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .scrolls {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-bottom h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .ovals {
+    width: 50px;
+    height: 35px;
+    border: 10px solid white;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* 💻 Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 40px 8%;
+  }
+
+  .contact-container {
+    gap: 40px;
+  }
+
+  .faq-section {
+    flex-direction: column;
+    padding: 50px 8%;
+  }
+
+  .faq-left h2 {
+    font-size: 26px;
+  }
+
+  .slider-track img {
+    width: 130px;
+    margin: 0 30px;
+  }
+
+  footer {
+    width: 100%;
+    padding: 60px;
+  }
+
+  .footer-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .scroll {
+    width: 100%;
+    gap: 80px;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .footer-bottom h1 {
+    font-size: 80px;
+  }
+
+  .footer-links {
+    gap: 60px;
+    justify-content: center;
+  }
+}
+
+/* 🖥️ Large Desktop (min-width: 1440px) */
+@media (min-width: 1440px) {
+  .contact-section {
+    padding: 80px 15%;
+  }
+
+  .faq-section {
+    padding: 80px 15%;
+  }
+
+  footer {
+    padding: 100px 15%;
+  }
+}
+
+
+
+
+
